@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Music App</string>
+    <string name="classements">Classements</string>
+    <string name="recherche">Recherche</string>
+    <string name="favoris">Favoris</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="titres">Titres</string>
+    <string name="album">Album</string>
+    <string name="entrez_la_requ_te_de_recherche">Entrez la requête de recherche</string>
+    <string name="artistes">Artistes</string>
+    <string name="albums">Albums</string>
+    <string name="titres_les_plus_apprecies">Titres Les Plus Apprecies</string>
+    <string name="no_artists_found_in_likes">No Artists Found in Likes</string>
+    <string name="no_albums_found_in_likes">No Albums Found in Likes</string>
+</resources>

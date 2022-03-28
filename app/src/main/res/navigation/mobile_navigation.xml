@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    android:label="@string/classements"
+    app:startDestination="@id/classementsFragment">
+
+
+    <fragment
+        android:id="@+id/classementsFragment"
+        android:name="com.ald47.project.musicapp.fragments.ClassementsFragment"
+        android:label="@string/classements"
+        tools:layout="@layout/fragment_classements" >
+        <action
+            android:id="@+id/action_classementsFragment_to_albumDetailsFragment"
+            app:destination="@id/albumDetailsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/rechercherFragment"
+        android:name="com.ald47.project.musicapp.fragments.RechercherFragment"
+        android:label="@string/recherche"
+        tools:layout="@layout/fragment_rechercher" >
+        <action
+            android:id="@+id/action_rechercherFragment_to_artistDetailsFragment"
+            app:destination="@id/artistDetailsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_rechercherFragment_to_albumDetailsFragment"
+            app:destination="@id/albumDetailsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/favorisFragment"
+        android:name="com.ald47.project.musicapp.fragments.FavorisFragment"
+        android:label="@string/favoris"
+        tools:layout="@layout/fragment_favoris" >
+        <action
+            android:id="@+id/action_favorisFragment_to_albumDetailsFragment"
+            app:destination="@id/albumDetailsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_favorisFragment_to_artistDetailsFragment"
+            app:destination="@id/artistDetailsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/artistDetailsFragment"
+        android:name="com.ald47.project.musicapp.fragments.ArtistDetailsFragment"
+        android:label="fragment_artist_details"
+        tools:layout="@layout/fragment_artist_details" />
+    <fragment
+        android:id="@+id/albumDetailsFragment"
+        android:name="com.ald47.project.musicapp.fragments.AlbumDetailsFragment"
+        android:label="fragment_album_details"
+        tools:layout="@layout/fragment_album_details" />
+
+
+</navigation>

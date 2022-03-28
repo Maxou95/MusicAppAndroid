@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.AlbumDetailsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/albumCoverIV"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:scaleType="center"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <View
+                android:id="@+id/overlay_image"
+                android:background="#6F000000"
+                app:layout_constraintBottom_toBottomOf="@+id/albumCoverIV"
+                app:layout_constraintTop_toTopOf="@+id/albumCoverIV"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+            <ImageView
+                android:id="@+id/albumThumbIV"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/place_holder_colored"
+                app:layout_constraintBottom_toBottomOf="@+id/albumCoverIV"
+                app:layout_constraintStart_toStartOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent" />
+
+            <TextView
+                android:id="@+id/albumTitleTV"
+                android:layout_width="0dp"
+                android:maxLines="2"
+                android:layout_marginEnd="15dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/urbanist_extra_bold"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/albumThumbIV"
+                app:layout_constraintTop_toTopOf="@+id/albumThumbIV"
+                tools:text="Album Title" />
+
+            <TextView
+                android:id="@+id/artistNameTV"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/urbanist_semibold"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/likeBtn"
+                app:layout_constraintEnd_toStartOf="@+id/likeBtn"
+                app:layout_constraintStart_toEndOf="@+id/backBtn"
+                app:layout_constraintTop_toTopOf="@+id/backBtn"
+                tools:text="Album Name" />
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="10dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="10dp"
+                android:src="@drawable/arrow_left"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/likeBtn"
+                app:tint="@color/white" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/likeBtn"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#EEEEEE"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/heartIV"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/heart_unliked" />
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/starIV"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="25dp"
+                android:src="@drawable/ic_star"
+                app:layout_constraintBottom_toBottomOf="@+id/albumRatingTV"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/albumRatingTV"
+                app:tint="#757575" />
+
+            <TextView
+                android:id="@+id/albumRatingTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/urbanist_semibold"
+                android:textColor="#757575"
+                android:textSize="13sp"
+                app:layout_constraintStart_toEndOf="@+id/starIV"
+                app:layout_constraintTop_toBottomOf="@+id/albumCoverIV"
+                tools:text="4.9" />
+
+            <TextView
+                android:id="@+id/votesCountTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:fontFamily="@font/urbanist_semibold"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/albumRatingTV"
+                app:layout_constraintStart_toEndOf="@+id/albumRatingTV"
+                app:layout_constraintTop_toTopOf="@+id/albumRatingTV"
+                tools:text="69 votes" />
+
+            <TextView
+                android:id="@+id/albumDescriptionTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/urbanist_regular"
+                android:lineSpacingExtra="4dp"
+                android:maxLines="5"
+                android:textColor="#757575"
+                app:layout_constraintTop_toBottomOf="@+id/starIV"
+                tools:text="Artist bio that will be returned from the API" />
+
+            <TextView
+                android:id="@+id/mostLikedTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/urbanist_bold"
+                android:text="@string/titres"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/albumDescriptionTV" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/albumTracksRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="40dp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mostLikedTag" />
+
+
+            <ProgressBar
+                android:id="@+id/detailsPrg"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</layout>

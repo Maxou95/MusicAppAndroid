@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/searchItem"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:layout_marginTop="10dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:background="#ECEFF1">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/itemImg"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/place_holder_colored"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent" />
+
+    <TextView
+        android:id="@+id/itemTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="50dp"
+        android:layout_toEndOf="@+id/itemImg"
+        android:ellipsize="end"
+        android:fontFamily="@font/urbanist_extra_bold"
+        android:maxLines="2"
+        android:textSize="20sp"
+        tools:text="Title" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="15dp"
+        android:padding="3dp"
+        android:rotation="180"
+        android:src="@drawable/arrow_left" />
+</RelativeLayout>

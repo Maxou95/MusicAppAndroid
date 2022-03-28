@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/listItem"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?attr/selectableItemBackground"
+    android:paddingStart="15dp"
+    android:paddingEnd="15dp">
+
+    <TextView
+        android:id="@+id/rankTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/urbanist_extra_bold"
+        android:textSize="25sp"
+        tools:text="1" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/itemCoverIV"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/rankTV"
+        android:src="@drawable/place_holder_colored"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent" />
+
+    <TextView
+        android:id="@+id/titleTV"
+        android:layout_marginTop="8dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_marginEnd="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/itemCoverIV"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/itemCoverIV"
+        android:fontFamily="@font/urbanist_extra_bold"
+        android:textSize="18sp"
+        tools:text="Item Title" />
+
+    <TextView
+        android:id="@+id/artistNameTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleTV"
+        android:layout_alignStart="@+id/titleTV"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/urbanist_regular"
+        android:maxLines="1"
+        android:textColor="#757575"
+        android:textSize="14sp"
+        tools:text="Artist Name" />
+</RelativeLayout>

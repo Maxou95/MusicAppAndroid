@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.RechercherFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/searchET"
+                android:imeOptions="actionSearch"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="18dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/search_box_bk"
+                android:drawableStart="@drawable/search_ico"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/urbanist_medium"
+                android:hint="@string/entrez_la_requ_te_de_recherche"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="15dp"
+                android:paddingEnd="40dp"
+                android:textSize="15sp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/clearTextIV"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="25dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:focusable="true"
+                android:padding="8dp"
+                android:src="@drawable/cancel_ico"
+                app:layout_constraintBottom_toBottomOf="@+id/searchET"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/searchET"
+                app:tint="#9E9E9E" />
+
+            <LinearLayout
+                android:id="@+id/searchResultViews"
+                android:visibility="gone"
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/searchET">
+
+                <TextView
+                    android:id="@+id/tag1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/urbanist_extra_bold"
+                    android:text="@string/artistes"
+                    android:textSize="28sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/searchET" />
+
+                <ProgressBar
+                    android:id="@+id/artistsPrg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/artistsRV"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tag1" />
+
+                <TextView
+                    android:id="@+id/tag2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/urbanist_extra_bold"
+                    android:text="@string/albums"
+                    android:textSize="28sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/artistsRV" />
+
+                <ProgressBar
+                    android:id="@+id/albumsPrg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/albumsRV"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40dp" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</layout>
